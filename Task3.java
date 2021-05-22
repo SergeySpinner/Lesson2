@@ -1,9 +1,6 @@
 package Lesson2;
 
-import java.io.FileWriter;
-import java.io.IOException;
-
-public class Task3 implements StringWorker, Writer {
+public class Task3 implements StringWorker {
     @Override
     public int execute(String sentence, String word) {
         int Index = 0;
@@ -12,12 +9,5 @@ public class Task3 implements StringWorker, Writer {
             Index += f.length();
 
         return Index;
-    }
-
-    @Override
-    public void write(String value) throws IOException {
-        FileWriter Temp = new FileWriter("Task3.txt");
-        Temp.write("Result of working Task 3: " + value);
-        Temp.close();
     }
 }

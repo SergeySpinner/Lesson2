@@ -1,5 +1,6 @@
 package Lesson2;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -11,6 +12,9 @@ public class Main {
         Task2 task2 = new Task2();
         Task3 task3 = new Task3();
 
+        FileWriter fileWriter = new FileWriter();
+        ConsoleWriter consoleWriter = new ConsoleWriter();
+
         Scanner reader = new Scanner(System.in);
 
         System.out.println("What task do you want to perform?" +
@@ -21,27 +25,27 @@ public class Main {
                 System.out.println("You want to print the results or write in the file?" +
                         "\n1) Print\n2) Write in the file");
                 if (reader.nextInt() == 1)
-                    System.out.println(task1.execute(Sentence, Word));
+                    consoleWriter.write(String.valueOf(task1.execute(Sentence, Word)));
                 else
-                    task1.write(String.valueOf(task1.execute(Sentence, Word)));
+                    fileWriter.write(String.valueOf(task1.execute(Sentence, Word)));
             }
             break;
             case 2: {
                 System.out.println("You want to print the results or write in the file?" +
                         "\n1) Print\n2) Write in the file");
                 if (reader.nextInt() == 1)
-                    System.out.println(task2.execute(Sentence, Word));
+                    consoleWriter.write(String.valueOf(task2.execute(Sentence, Word)));
                 else
-                    task1.write(String.valueOf(task2.execute(Sentence, Word)));
+                    fileWriter.write(String.valueOf(task2.execute(Sentence, Word)));
             }
             break;
             case 3: {
                 System.out.println("You want to print the results or write in the file?" +
                         "\n1) Print\n2) Write in the file");
                 if (reader.nextInt() == 1)
-                    System.out.println(task3.execute(Sentence, Word));
+                    consoleWriter.write(String.valueOf(task3.execute(Sentence, Word)));
                 else
-                    task1.write(String.valueOf(task3.execute(Sentence, Word)));
+                    fileWriter.write(String.valueOf(task3.execute(Sentence, Word)));
             }
         }
     }
